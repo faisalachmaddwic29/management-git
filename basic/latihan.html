@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Vue JS</title>
+        <style>
+            body {
+                margin: 5%;
+                font-family: "Quicksand", sans-serif;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="app">
+            <header>
+                <img
+                    src="https://docs.vuejs.id/images/logo.png"
+                    alt="logl"
+                    style="width: 70px; height: 70px"
+                />
+                <!-- <h1>What is Vue.Js</h1> -->
+                <h1 v-once>{{ isActive ? getNama() : 'Gagal' }}</h1>
+                <p>The Progressive Javascrip Framework</p>
+            </header>
+
+            <footer>
+                <p>&copy;Faisal Achmad Dwi Cahyono</p>
+            </footer>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
+        <script>
+            const member = {
+                // String, number, boolean, array, object
+                nama: "Faisal Achmad Dwi Cahyono",
+                message: "Hello World",
+                isActive: true,
+            };
+
+            const vm = new Vue({
+                el: "#app",
+                data: member,
+                methods: {
+                    getNama : () => {
+                        return 'Hello, ' + this.nama;
+                    }
+                }
+            });
+        </script>
+    </body>
+</html>
